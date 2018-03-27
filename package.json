@@ -1,0 +1,73 @@
+{
+  "title": "BS Local Filesystem Links",
+  "name": "bs-local-filesystem-links",
+  "version": "0.99.47",
+  "description": "Scans pages for file:/// links and makes it possible to open them with the system's file browser.",
+  "main": "index.js",
+  "author": "Bill Stidham",
+  "scripts": {
+    "jpm": "jpm run",
+    "jpmLinux": "jpm run -b $(which firefox)",
+    "lint": "gulp"
+  },
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MPL 1.1/GPL 3.0",
+  "id": "3cc9de3f-2b22-4cba-952c-7ee2fb184aaf@billstidham",
+  "permissions": {
+    "multiprocess": true
+  },
+  "preferences": [
+    {
+      "name": "whitelist",
+      "title": "Enable file link addon for whitelisted URLs",
+      "description": "Any URL that's in the whitelist will enable local file links if you're browsing to that address. Empty or * will enable all. Multiple URLs are space separated. Wildcards are allowed e.g. *.trello.com",
+      "type": "string",
+      "value": "*"
+    },
+    {
+      "name": "enableExecutables",
+      "title": "Enable links to local executable files",
+      "description": "If enabled any progam file can be launched by the addon. (Attention! A malicious site could use this for denial-of-service attack!)",
+      "type": "bool",
+      "value": false
+    },
+    {
+      "name": "enableLinkIcons",
+      "title": "Enable link icons",
+      "description": "If checked there will be a link added to every local link",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "name": "revealOpenOption",
+      "type": "radio",
+      "title": "Default link text click behaviour",
+      "description": "Changes the default click behaviour of file-links. Default = direct file link open.",
+      "value": "O",
+      "options": [
+      {
+        "value": "O",
+        "label": "Open"
+      },
+      {
+        "value": "R",
+        "label": "Reveal"
+      },
+      {
+        "value": "D",
+        "label": "Direct"
+      }]
+    }
+  ],
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.1.0",
+    "eslint-config-defaults": "^9.0.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-plumber": "^1.1.0"
+  }
+}

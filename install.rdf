@@ -5,7 +5,7 @@
           <em:type>2</em:type>
           <em:bootstrap>true</em:bootstrap>
           <em:unpack>false</em:unpack>
-          <em:version>0.99.47</em:version>
+          <em:version>0.0.1</em:version>
           <em:name>BS Local Filesystem Links</em:name>
           <em:description>Opens Local Links - Based on Jetpack Local File Sytem Links 0.99.47</em:description>
           <em:creator>Bill Stidham</em:creator>
